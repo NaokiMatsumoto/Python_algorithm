@@ -9,7 +9,7 @@
 
 
 class InterestingParty:
-
+#aaaa
     @staticmethod
     def best_invitation(first, second):
         hobby_dict = {}
