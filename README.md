@@ -1,59 +1,76 @@
-# リポジトリ名
-ざっくりな説明
+# Python_algorithm
+pythonを使って、複雑なアルゴリズムを用いて問題を解いています。
+pythonの文法を理解するだけでなく使いこなせるようになることを目的としています
 
-## Description
-もう少しつっこんだ説明  
-画像とか
+## searchディレクトリ
+主に、探索のアルゴリズムを使って問題を解いてます。
+下に各ソースコードでどのような問題を解いているのか記載します。
 
-## Usage
-### Install
-```sh
-git clone https://github.com/ahuglajbclajep/my-project.git
-cd my-project
-```
-事前に必要なものなども
+### sudoku
+数独の答えを返して表示するアルゴリズム。答えが複数ある場合、答えが存在しない場合はErrorと表示
+引数として文字列のリストが与えられる。
+引数　：
+sudoku  : リスト　数独の初期状態を表します。'.' or 数字からなります。'.'は空白を意味します。
 
-### Open
-特定のソフトで開くとき
+例）
+引数 : sudoku ={".8..1..2.","6..3.5..1","..7...4..",".2.1.9.5.","7.......6",".9.6.3.4.","..5...3..","9..2.1..8",".3..6..7."}
+のとき、
+初期状態
+.8..1..2.
+6..3.5..1
+..7...4..
+.2.1.9.5.
+7.......6
+.9.6.3.4.
+..5...3..
+9..2.1..8
+.3..6..7.
 
-### Settings
-環境変数など
+実行すると以下のように答えが表示されます。
+389714625
+642395781
+517826439
+426179853
+753482196
+198653247
+865947312
+974231568
+231568974
 
-### Build
-コンパイルなど
 
-### Deploy
-![herokubutton](https://www.herokucdn.com/deploy/button.svg)  
-とかでもいい
+### Cryptography
+与えられたnumbersリストから、任意の一つの要素を選んで1加算し、
+全ての積を求める。
+そのうち、積が最も大きくなる場合の値を返す
+例）
+{3,2,3} => 27
+{1,2,3,4} => 48
 
-### Run
-実行
+### FriendScore
+与えられた文字列のリストfriendsから友人の友人まで数えた場合の
+値の最大値を求める。与えられた値で、Yが友人、Nは友人でないとする。
+例）
+friends ={"NYNNN", "YNYNN", "NYNYN", "NNYNY", "NNNYN"}
+↑の場合、0番目の人の友達は、1番目の人
+1番目の人の友達は、0番目の人と2番目の人
+したがって、0番目の人の友達と、友達の友達の数は、2人
 
-### Check
-```sh
-firefox http://localhost:8080/my-project &
-```
-とか
+同様に、0番目と4番目の人の友人と友人の友人の数は2人,1番目と3番目の人の友人と友人の友人の数は3人
+2番目の人の友人と友人の友人の数は4人
+このため、最大値は4
 
-## Hints
-### Options
-コマンドのオプションとか
+### InterestingParty
+各メンバーの趣味としてfirst,secondという引数として与えられます。
+同じ趣味を持つ人の最大の数を返します
+例）
+first = ["fishing", "gardening", "swimming", "fishing"]
+second = ["hunting", "fishing", "eating", "biting"]
+↑の場合、2番目の人以外はfishingを趣味に持ちます。
+そのため、返す値は3です。
 
-### Distribute
-`*.zip`にするタスクとかあるなら
-
-### Examples Of Command
-コマンドの実行結果の例とか
-
-## Future Releases
-今後の方針
-
-## Contribution
-1. Fork it  
-2. Create your feature branch  
-3. Commit your changes  
-4. Push to the branch  
-5. Create new Pull Request
-
-## License
-[MIT](LICENSE)
+### Palidrome
+引数strに右端から文字列を追加して回文となった場合の回文の長さの最小値を返します
+例）
+str = aabc
+のとき、最小の長さの回文はaabcbaaです。
+そのため、返す値は、7です。
