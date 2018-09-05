@@ -12,11 +12,14 @@ class Palindrome:
 
     @staticmethod
     def find(str):
+        # mid_str : 与えられた文字列(str)の中心
         mid_str = len(str) // 2
+        # palindroome_lenは返り値とする。
         palindrome_len = len(str) * 2
         # 与えられた文字列の真ん中から右に移動し、回文を作れるかチェック
         for index in range(mid_str, len(str)):
             is_palindrome = True
+            # check_indexは0～indexからstrの右端までの長さ
             for check_index in range(len(str) - index):
                 if str[index - check_index] != str[index + check_index]:
                     is_palindrome = False
