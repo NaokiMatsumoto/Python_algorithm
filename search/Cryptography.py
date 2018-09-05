@@ -13,11 +13,14 @@ class Cryptography:
 
     @staticmethod
     def encrypt(numbers):
+        # 答えとして返す値(multiply_max)を初期化します。各要素の値は1~1000なので、最低でも1となります。
         multiply_max = 1
         multiply = 1
+        # multiplyを数値のリスト(numbers)に含まれる数の積にします。
         for number in numbers:
             multiply *= number
         for number in numbers:
+            # multiplyはnumbersのすべての積のため、multiply // number * (number + 1)は数値のひとつに1加算したものの積となります。ループの中で各数値に1加えていきmax関数で最大値を取ります。
             multiply_max = max(multiply_max, multiply // number * (number + 1))
         return multiply_max
 
